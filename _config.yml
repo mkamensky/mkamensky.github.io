@@ -83,8 +83,8 @@ author:
   name             : "Moshe Kamensky"
   avatar           : "profile.png"
   bio              : "Lecturer in Mathematics at BGU"
-  location         : "Be'er-Sheva, Israel"
-  employer         : "Ben-Gurion University"
+  location         :
+  employer         : "Ben-Gurion University, Be'er-Sehva, Israel"
   googlescholar    : "https://scholar.google.com/citations?user=XQf8uW4AAAAJ"
   email            : "kamenskm@bgu.ac.il"
   uri              :
