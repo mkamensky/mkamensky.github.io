@@ -92,10 +92,10 @@ author:
   codepen          :
   dribbble         :
   flickr           :
-  facebook         : "moshe.kamensky"
+  #  facebook         : "moshe.kamensky"
   foursquare       :
   github           : "mkamensky"
-  google_plus      : "MosheKamensky"
+  #  google_plus      : "MosheKamensky"
   keybase          :
   instagram        :
   lastfm           :
@@ -107,7 +107,7 @@ author:
   mathoverflow     : "10174"
   steam            :
   tumblr           :
-  twitter          : "moshe_kamensky"
+    #  twitter          : "moshe_kamensky"
   vine             :
   weibo            :
   xing             :

@@ -1,14 +1,38 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
-excerpt: "About me"
+title: "Academic profile"
+excerpt: "Academic profile"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
+I am a lecturer (assistant professor) at the [Math 
+department](https://www.math.bgu.ac.il) of [Ben-Gurion 
+University](https://www.bgu.ac.il), Be'er-Sheva, Israel.
 
-This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
+I received my PhD in 2007 from the Hebrew University, under the supervision 
+of [Ehud Hrushovski](http://www.ma.huji.ac.il/~ehud/). Previous positions 
+include:
+
+- Postdoc at the [Mathematics department](http://math.huji.ac.il) 
+  of [The Hebrew University](http://www.huji.ac.il) in Jerusalem, Israel, 
+  working with [Ehud Hrushovski](http://www.ma.huji.ac.il/~ehud/).
+
+- Postdoc at the [Mathematics department](https://math.nd.edu) 
+  of [Notre-Dame University](https://www.nd.edu), where I worked with [Sergei 
+  Starchenko](https://www.nd.edu/~sstarche), as well as others in the [logic 
+  group](https://math.nd.edu/research/research-groups-in-mathematics/logic)
+
+- Postdoc at the [Pure Math 
+  department](http://www.math.uwaterloo.ca/PM_Dept/) of the [University of 
+  Waterloo](http://uwaterloo.ca). I worked there with [Rahim 
+  Moosa](http://www.math.uwaterloo.ca/~rmoosa).
+
+- [Modnet](http://www.logique.jussieu.fr/modnet/Home/) postdoc at the 
+[Maths department](http://www.mth.uea.ac.uk) of the [University of 
+East-Anglia](http://www.uea.ac.uk), where I worked with [David 
+Evans](http://www.mth.uea.ac.uk/~h120).
 
 A data-driven personal website
 ======
