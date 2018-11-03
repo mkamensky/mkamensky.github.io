@@ -30,7 +30,7 @@ include:
   Moosa](http://www.math.uwaterloo.ca/~rmoosa).
 
 - [Modnet](http://www.logique.jussieu.fr/modnet/Home/) postdoc at the 
-[Maths department](http://www.mth.uea.ac.uk) of the [University of 
+[Maths department](http://www.uea.ac.uk/mathematics) of the [University of 
 East-Anglia](http://www.uea.ac.uk), where I worked with [David 
 Evans](http://www.mth.uea.ac.uk/~h120).
 
