@@ -6,20 +6,20 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "en-US"
-title                    : "Your Name / Site Title"
+locale                   : "en-GB"
+title                    : "Moshe Kamensky"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : &name "Moshe Kamensky"
+description              : &description "Lecturer at Ben-Gurion University"
+url                      : https://mkamensky.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "mkamensky/mkamensky.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : false #change to true to add link to talkmap on talks page
+talkmap_link             : true #change to true to add link to talkmap on talks page
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
@@ -59,7 +59,7 @@ yandex_site_verification :
 twitter:
   username               : &twitter
 facebook:
-  username               :
+  username               : moshe.kamensky
   app_id                 :
   publisher              :
 og_image                 :  # Open Graph/Twitter default site image
@@ -80,33 +80,33 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
+  name             : "Moshe Kamensky"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
-  employer         :
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
+  bio              : "Lecturer in Mathematics at BGU"
+  location         : "Be'er-Sheva, Israel"
+  employer         : "Ben-Gurion University"
+  googlescholar    : "https://scholar.google.com/citations?user=XQf8uW4AAAAJ"
+  email            : "kamenskm@bgu.ac.il"
   uri              :
-  bitbucket        :
+  bitbucket        : "https://bitbucket.org/kamensky"
   codepen          :
   dribbble         :
   flickr           :
-  facebook         :
+  facebook         : "https://www.facebook.com/moshe.kamensky"
   foursquare       :
-  github           : "academicpages"
-  google_plus      :
+  github           : "https://github.com/mkamensky"
+  google_plus      : "https://plus.google.com/+MosheKamensky"
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  linkedin         : "https://www.linkedin.com/in/moshe-kamensky-14975257/"
+  orcid            : "http://orcid.org/0000-0002-1925-310X"
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackoverflow    : "https://mathoverflow.net/users/10174/moshe"
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : "moshe_kamensky"
   vine             :
   weibo            :
   xing             :
