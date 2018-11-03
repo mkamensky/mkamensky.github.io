@@ -84,10 +84,11 @@ author:
   avatar           : "profile.png"
   bio              : "Lecturer in Mathematics at BGU"
   location         :
-  employer         : "Ben-Gurion University, Be'er-Sehva, Israel"
+  employer         : "Ben-Gurion University, Israel"
   googlescholar    : "https://scholar.google.com/citations?user=XQf8uW4AAAAJ"
   email            : "kamenskm@bgu.ac.il"
   uri              :
+  arxiv            : "kamensky_m_1"
   bitbucket        : "kamensky"
   codepen          :
   dribbble         :
