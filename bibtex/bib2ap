@@ -1,0 +1,102 @@
+#!ruby
+
+require 'bibtex'
+require 'optparse'
+require 'mustache'
+require 'csl/styles'
+require 'citeproc'
+
+@format = 'publications'
+@locale = 'en-GB'
+@style = 'apa'
+@verbose = true
+@rcfile = 'bib2aprc'
+
+begin
+binding.eval(File.read(@rcfile), @rcfile)
+rescue Errno::ENOENT => e
+end
+
+OptParse.new do |opts|
+  opts.banner = <<EOF
+Usage: bib2ap [options] [<bibfile>]
+
+<bibfile> is the bibtex file, defaults to <format>.bib
+
+EOF
+  
+  opts.on('-h', '--help [styles|locales]', 'Prints this help') do |h|
+    if (h == 'styles')
+      puts CSL::Style.ls
+    elsif ( h == 'locales')
+      puts CSL::Locale.ls
+    else
+      puts opts
+    end
+    exit
+  end
+
+  opts.on('-f', '--format STRING', 
+          "Output format and directory (default: '#{@format}')") do |f|
+    @format = f
+  end
+  opts.on('-t', '--template STRING',
+          "Template for output (default: <format>.mustache)") do |t|
+    @template = t
+  end
+
+  opts.on('-e', '--eval STRING',
+          "Eval given ruby code on each item (`item` refers to the current item)") do |c|
+    @code = c
+  end
+
+  opts.on('-l', '--locale STRING', "Locale for citeproc (default: #{@locale}). Run with '--help locales' for available locales") do |l|
+    @locale = l
+  end
+
+  opts.on('-s', '--style STRING', "Citation style for citeproc (default: #{@style}). Run with '--help styles' for available styles") do |s|
+    @style = s
+  end
+  opts.on('-v', '--[no-]verbose', "Print progress info (default: #{@verbose})") do |v|
+    @verbose = v
+  end
+end.parse!
+
+@template ||= "#{@format}.mustache"
+
+@bibfile = ARGV.shift || "#{@format}.bib"
+
+def to_fname(item)
+  item.title.tr(' ', '-').tr_s('^A-Za-z0-9\-_', '')
+end
+
+def verbose(what)
+  STDERR.puts what if @verbose
+end
+
+bib = BibTeX.open @bibfile, include: [:meta_content]
+verbose "Read bibtex file #{@bibfile}"
+bib.replace.join.extend_initials!
+
+cp = CiteProc::Processor.new style: @style, format: :html, locale: @locale
+
+@must = Mustache.new
+@must.template_file = @template
+
+bib['@entry'].each do |item|
+  verbose "Processing #{item[:key]}"
+  eval @code if @code
+  item.each {|k,v| @must["bib_#{k}"] = v.to_s}
+  cit = item.to_citeproc
+  cit.each {|k,v| @must["cit_#{k}"] = v.to_s}
+  cp.import [cit]
+  citation = cp.render :bibliography, id: item.key
+  @must["citation"] = citation[0]
+  @must['fname'] = to_fname(item)
+  fname = "_#{@format}/#{@must['fname']}.md"
+  verbose "  Writing to #{fname}"
+  File.open(fname, 'w') do |ff|
+    ff.write(@must.render)
+  end
+end
+

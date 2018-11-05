@@ -1,0 +1,5 @@
+@code = <<'EOF'
+item.author.sub!("\\bgurole{PI}", "") if item.author.respond_to?(:sub!)
+item[:url] ||= "https://arxiv.org/abs/#{item.eprint}" if item[:eprinttype] == "arxiv"
+EOF
+# vim: ft=ruby:
