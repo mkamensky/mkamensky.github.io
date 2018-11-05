@@ -144,6 +144,7 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - bibtex
 keep_files:
   - .git
   - .svn
@@ -257,7 +258,7 @@ timezone: Asia/Israel # http://en.wikipedia.org/wiki/List_of_tz_database_time_zo
 
 
 # Plugins
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist

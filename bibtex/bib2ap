@@ -10,7 +10,7 @@ require 'citeproc'
 @locale = 'en-GB'
 @style = 'apa'
 @verbose = true
-@rcfile = 'bib2aprc'
+@rcfile = 'bibtex/bib2aprc'
 
 begin
 binding.eval(File.read(@rcfile), @rcfile)
@@ -62,12 +62,18 @@ EOF
   end
 end.parse!
 
-@template ||= "#{@format}.mustache"
+@template ||= "bibtex/#{@format}.mustache"
 
 @bibfile = ARGV.shift || "#{@format}.bib"
 
 def to_fname(item)
   item.title.tr(' ', '-').tr_s('^A-Za-z0-9\-_', '')
+end
+
+def month_canon(month)
+  return '01' unless month
+  month = month.to_s
+  return (month.to_i > 0 ? month : (Date::ABBR_MONTHNAMES.index(month[0..2].capitalize) || 1)).to_s.rjust(2, '0')
 end
 
 def verbose(what)
@@ -87,6 +93,10 @@ bib['@entry'].each do |item|
   verbose "Processing #{item[:key]}"
   eval @code if @code
   item.each {|k,v| @must["bib_#{k}"] = v.to_s}
+  if item[:year]
+    month = month_canon(item[:month])
+    @must['date'] = "#{item[:year]}-#{month}-01"
+  end
   cit = item.to_citeproc
   cit.each {|k,v| @must["cit_#{k}"] = v.to_s}
   cp.import [cit]
