@@ -5,6 +5,7 @@ require 'optparse'
 require 'mustache'
 require 'csl/styles'
 require 'citeproc'
+require 'json'
 
 @format = 'publications'
 @locale = 'en-GB'
@@ -73,11 +74,17 @@ end
 def month_canon(month)
   return '01' unless month
   month = month.to_s
-  return (month.to_i > 0 ? month : (Date::ABBR_MONTHNAMES.index(month[0..2].capitalize) || 1)).to_s.rjust(2, '0')
+  return (month.to_i > 0 ? month : (
+    Date::ABBR_MONTHNAMES.index(month[0..2].capitalize) || 1
+  )).to_s.rjust(2, '0')
 end
 
 def verbose(what)
   STDERR.puts what if @verbose
+end
+
+def to_escaped(a)
+  a.to_s.to_json.sub(/^"/,'').sub(/"$/, '')
 end
 
 bib = BibTeX.open @bibfile, include: [:meta_content]
@@ -92,16 +99,23 @@ cp = CiteProc::Processor.new style: @style, format: :html, locale: @locale
 bib['@entry'].each do |item|
   verbose "Processing #{item[:key]}"
   eval @code if @code
-  item.each {|k,v| @must["bib_#{k}"] = v.to_s}
+  item.each {|k,v|
+    @must["bib_#{k}"] = to_escaped(v)
+    @must["bare_bib_#{k}"] = v.to_s
+  }
   if item[:year]
     month = month_canon(item[:month])
     @must['date'] = "#{item[:year]}-#{month}-01"
   end
   cit = item.to_citeproc
-  cit.each {|k,v| @must["cit_#{k}"] = v.to_s}
+  cit.each {|k,v| 
+    @must["cit_#{k}"] = to_escaped(v)
+    @must["bare_cit_#{k}"] = v.to_s
+  }
   cp.import [cit]
   citation = cp.render :bibliography, id: item.key
-  @must["citation"] = citation[0]
+  @must["citation"] = to_escaped(citation[0])
+  @must["bare_citation"] = citation[0]
   @must['fname'] = to_fname(item)
   fname = "_#{@format}/#{@must['fname']}.md"
   verbose "  Writing to #{fname}"
