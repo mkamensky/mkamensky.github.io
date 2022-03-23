@@ -1,9 +1,9 @@
 ---
-title: "Model theory of differential fields"
+title: "תורת המודלים של שדות דיפרנציאליים --- Model theory of differential fields"
 collection: teaching
 type: "Graduate course"
 date: 2022-03-22
-venue: BGU
+venue: בן-גוריון
 ---
 
 ## תקציר
