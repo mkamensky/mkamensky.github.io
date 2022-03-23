@@ -1,9 +1,10 @@
 ---
 title: "תורת המודלים של שדות דיפרנציאליים --- Model theory of differential fields"
 collection: teaching
-type: "קורס מתקדת"
+type: "קורס מתקדם"
 date: 2022-03-22
 venue: בן-גוריון
+notes: spring2022/dcf/notes.pdf
 ---
 
 ## תקציר
