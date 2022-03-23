@@ -2,7 +2,7 @@
 title: "Model theory of differential fields"
 collection: teaching
 type: "Graduate course"
-date: Spring 2022
+date: 2022-03-22
 venue: BGU
 ---
 
