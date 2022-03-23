@@ -6,7 +6,7 @@ date: Spring 2022
 venue: BGU
 ---
 
-- [Notes](files/teaching/spring2022/dcf/notes.pdf)
+- [Notes](/files/teaching/spring2022/dcf/notes.pdf)
 
-- [Or's notes](files/teaching/spring2022/dcf/or) (Hebrew)
+- [Or's notes](/files/teaching/spring2022/dcf/or) (Hebrew)
 
