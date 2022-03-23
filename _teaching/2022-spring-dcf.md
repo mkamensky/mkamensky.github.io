@@ -25,5 +25,7 @@ notes: spring2022/dcf/notes.pdf
 - [רשימות שלי](/files/teaching/spring2022/dcf/notes.pdf) (אנגלית, מתעדכן מדי 
   פעם)
 
-- [רשימות של אור](/files/teaching/spring2022/dcf/or) (עברית)
+- סיכומים של אור (עברית)
+   - [הרצאה 1](/files/teaching/spring2022/dcf/or/lect1.pdf)
+
 
