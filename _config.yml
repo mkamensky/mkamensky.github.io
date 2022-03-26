@@ -18,7 +18,7 @@ teaser                   :  # filename of teaser fallback teaser image placed in
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
-read_more                : "enabled" # if enabled, adds "Read more" links to excerpts
+read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : true #change to true to add link to talkmap on talks page
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
@@ -81,6 +81,8 @@ analytics:
 # Site Author
 author:
   name             : "Moshe Kamensky"
+  given            : "Moshe"
+  family           : "Kamensky"
   avatar           : "profile.png"
   bio              : "Lecturer in Mathematics at BGU"
   location         :
@@ -102,7 +104,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : "moshe-kamensky-14975257"
-  orcid            : "http://orcid.org/0000-0002-1925-310X"
+  orcid            : "0000-0002-1925-310X"
   pinterest        :
   soundcloud       :
   stackoverflow    : "6999817"

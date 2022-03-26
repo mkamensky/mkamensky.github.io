@@ -87,17 +87,25 @@ def to_escaped(a)
   a.to_s.to_json.sub(/^"/,'').sub(/"$/, '')
 end
 
-bib = BibTeX.open @bibfile, include: [:meta_content]
+bib = BibTeX.open @bibfile, include: [:meta_content], filter: :latex
 verbose "Read bibtex file #{@bibfile}"
 bib.replace.join.extend_initials!
 
 cp = CiteProc::Processor.new style: @style, format: :html, locale: @locale
 
-@must = Mustache.new
-@must.template_file = @template
 
 bib['@entry'].each do |item|
+  @must = Mustache.new
+  @must.template_file = @template
   verbose "Processing #{item[:key]}"
+  if item[:doi]
+    item[:doi_url] = "https://doi.org/#{item.doi}"
+    item[:url] ||= item[:doi_url]
+  end
+  if item[:eprinttype]&.downcase == "arxiv"
+    item[:arxiv_url] = "https://arxiv.org/abs/#{item.eprint}" 
+    item[:url] ||= item[:arxiv_url]
+  end
   eval @code if @code
   item.each {|k,v|
     @must["bib_#{k}"] = to_escaped(v)
@@ -117,6 +125,9 @@ bib['@entry'].each do |item|
   @must["citation"] = to_escaped(citation[0])
   @must["bare_citation"] = citation[0]
   @must['fname'] = to_fname(item)
+  next unless @must[:bare_cit_author]
+  authors = eval(@must[:bare_cit_author])
+  @must['authors'] = authors
   fname = "_#{@format}/#{@must['fname']}.md"
   verbose "  Writing to #{fname}"
   File.open(fname, 'w') do |ff|

@@ -14,6 +14,7 @@ source "https://rubygems.org"
 # To upgrade, run `bundle update`.
 
 gem "jekyll"
+gem "webrick"
 
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 

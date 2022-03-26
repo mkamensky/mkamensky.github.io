@@ -7,11 +7,15 @@ excerpt: "{{{cit_abstract}}}"
 date: {{date}}
 {{/date}}
 venue: "{{{cit_container-title}}}"
-paperurl: "{{{bib_url}}}"
+link: "{{{bib_url}}}"
 citation: "{{{citation}}}"
+arxiv_url: "{{{bare_bib_arxiv_url}}}"
+doi_url: "{{{bare_bib_doi_url}}}"
+authors:
+{{#authors}}
+  - family: {{{family}}}
+    given: {{{given}}}
+{{/authors}}
 ---
 {{bare_cit_abstract}}
-
-[Full text]({{{bare_bib_url}}})
-
 
