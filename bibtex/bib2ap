@@ -65,7 +65,7 @@ end.parse!
 
 @template ||= "bibtex/#{@format}.mustache"
 
-@bibfile = ARGV.shift || "#{@format}.bib"
+@bibfile = ARGV.shift || "bibtex/#{@format}.bib"
 
 def to_fname(item)
   item.title.tr(' ', '-').tr_s('^A-Za-z0-9\-_', '')
