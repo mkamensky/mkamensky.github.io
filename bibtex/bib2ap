@@ -68,7 +68,7 @@ end.parse!
 @bibfile = ARGV.shift || "bibtex/#{@format}.bib"
 
 def to_fname(item)
-  item.title.tr(' ', '-').tr_s('^A-Za-z0-9\-_', '')
+  (item.title.to_s + '-' + item.key).tr(' ', '-').tr_s('^A-Za-z0-9\-_', '')
 end
 
 def month_canon(month)
@@ -111,9 +111,14 @@ bib['@entry'].each do |item|
     @must["bib_#{k}"] = to_escaped(v)
     @must["bare_bib_#{k}"] = v.to_s
   }
+  if (item[:eventdate] && item[:eventdate] =~ /^[0-9]*$/)
+    item[:year] = item[:eventdate]
+    item[:eventdate] = nil
+  end
+
   if item[:year]
     month = month_canon(item[:month])
-    @must['date'] = "#{item[:year]}-#{month}-01"
+    @must['eventdate'] = @must['date'] = "#{item[:year]}-#{month}-01"
   end
   cit = item.to_citeproc
   cit.each {|k,v| 
