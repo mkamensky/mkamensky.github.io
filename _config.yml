@@ -5,7 +5,8 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
-source: src
+# Setting source: doesn't work on github-pages :(
+#source: src
 # Site Settings
 locale                   : "en-GB"
 title                    : "Moshe Kamensky"
