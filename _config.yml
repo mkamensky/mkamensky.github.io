@@ -127,6 +127,9 @@ include:
   - _pages
   - files
 exclude:
+  - CONTRIBUTING.md
+  - talkmap.ipynb
+  - talkmap.py
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
