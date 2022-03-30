@@ -2,9 +2,10 @@
 title: "תורת המודלים של שדות דיפרנציאליים --- Model theory of differential fields"
 collection: teaching
 type: "graduate"
-date: 2022-03-22
+year: 2022
+term: spring
+lang: he
 venue: בן-גוריון
-notes: spring2022/dcf/notes.pdf
 ---
 
 ## תקציר
@@ -22,9 +23,9 @@ notes: spring2022/dcf/notes.pdf
 
 ## רשימות
 
-- [רשימות שלי](/teaching/spring2022/dcf/notes.pdf) (אנגלית, מתעדכן מדי פעם)
+- [רשימות שלי](notes.pdf) (אנגלית, מתעדכן מדי פעם)
 
 - סיכומים של אור (עברית)
-   - [הרצאה 1](/teaching/spring2022/dcf/or/lect1.pdf)
+   - [הרצאה 1](or/lect1.pdf)
 
 

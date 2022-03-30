@@ -3,6 +3,7 @@ layout: default
 ---
 
 {% include base_path %}
+{% include i18n %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
@@ -35,7 +36,11 @@ layout: default
         {% endif %}
         
         {% if page.collection == 'teaching' %}
-          <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+              <p>
+      {{ t.course[page.type] }}, <i>{{ page.venue }}</i>,
+      {{ t.term[page.term] }} {{ page.year }}
+      </p>
+
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}

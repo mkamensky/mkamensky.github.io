@@ -9,6 +9,7 @@
 #source: src
 # Site Settings
 locale                   : "en-GB"
+languages: ["en", "he"]
 title                    : "Moshe Kamensky"
 title_separator          : "-"
 name                     : &name "Moshe Kamensky"
@@ -125,7 +126,6 @@ author:
 include:
   - .htaccess
   - _pages
-  - files
 exclude:
   - CONTRIBUTING.md
   - talkmap.ipynb
@@ -188,9 +188,6 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
   talks:
     output: true
     permalink: /:collection/:path/
@@ -234,15 +231,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
   # _talks
   - scope:
       path: ""

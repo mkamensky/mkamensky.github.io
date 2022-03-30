@@ -1,0 +1,13 @@
+en:
+  term:
+    fall: fall
+    spring: spring
+  course:
+    graduate: graduate
+
+he:
+  term:
+    fall: סתיו
+    spring: אביב
+  course:
+    graduate: מתקדם
