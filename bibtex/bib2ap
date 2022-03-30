@@ -133,7 +133,8 @@ bib['@entry'].each do |item|
   next unless @must[:bare_cit_author]
   authors = eval(@must[:bare_cit_author])
   @must['authors'] = authors
-  fname = "_#{@format}/#{@must['fname']}.md"
+  # todo: read src from _config.yml
+  fname = "src/_#{@format}/#{@must['fname']}.md"
   verbose "  Writing to #{fname}"
   File.open(fname, 'w') do |ff|
     ff.write(@must.render)
