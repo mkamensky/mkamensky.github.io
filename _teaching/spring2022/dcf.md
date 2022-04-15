@@ -28,6 +28,8 @@ venue: בן-גוריון
 - סיכומים של סטודנטים (עברית)
    - [שבוע 1](notes/lect1.pdf) (אור)
    - [שבוע 2](notes/week2.pdf) (אור)
+   - [הרצאה 4](notes/lect4.pdf) (אור)
    - [הרצאה 5](notes/lect5.pdf) (גילי)
+   - [שבוע 4](notes/week4.pdf) (אור)
 
 
