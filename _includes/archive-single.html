@@ -38,6 +38,12 @@
           <b class="ai ai-lg ai-arxiv"></b>
         </a>
       {% endif %}
+      {% if post.notes %}
+      <a  href="{{ post.url }}/{{ post.notes}}">
+          <i class="fas fa-file-alt" aria-hidden="true" title="notes"></i>
+          <span class="sr-only">Notes</span>
+        </a>
+      {% endif %}
     </h2>
 
     {% if post.read_time %}
@@ -45,10 +51,14 @@
     {% endif %}
 
     {% if post.collection == 'teaching' %}
-      <p>
-      {{ t.course[post.type] }}, <i>{{ post.venue }}</i>,
-      {{ t.term[post.term] }} {{ post.year }}
-      </p>
+      <div class="flex place-content-between" dir="ltr">
+        {% for loc in site.data.i18n %}
+          <p class="{{ loc[0] }}" dir="auto">
+          {{ loc[1].course[post.type] | capitalize }}, <i>{{ post.venue }}</i>,
+          {{ loc[1].term[post.term] }} {{ post.year }}
+          </p>
+        {% endfor %}
+      </div>
     {% elsif post.collection == 'publications' %}
       {% if post.authors.size > 1 %}
         <p>With:
@@ -86,3 +96,6 @@
   </article>
 </div>
 
+{% comment %}
+vim: ft=liquid:
+{% endcomment %}

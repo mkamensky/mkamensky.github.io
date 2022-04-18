@@ -3,11 +3,11 @@ en:
     fall: fall
     spring: spring
   course:
-    graduate: graduate
+    graduate: graduate course
 
 he:
   term:
     fall: סתיו
     spring: אביב
   course:
-    graduate: מתקדם
+    graduate: קורס מתקדם
