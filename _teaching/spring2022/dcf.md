@@ -5,7 +5,7 @@ title:
   he: "תורת המודלים של שדות דיפרנציאליים"
   en: "Model theory of differential fields"
 type: graduate
-year: 2022
+year: 2023
 term: spring
 lang: he
 notes:
