@@ -5,6 +5,7 @@ en:
     spring: spring
   course:
     graduate: graduate course
+    undergrad: undergraduate course
 
 he:
   notes: רשימות
@@ -13,3 +14,4 @@ he:
     spring: אביב
   course:
     graduate: קורס מתקדם
+    undergrad: קורס לתואר ראשון
