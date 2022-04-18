@@ -1,13 +1,16 @@
 ---
-title: "תורת המודלים של שדות דיפרנציאליים --- Model theory of differential fields"
-collection: teaching
-type: "graduate"
+last_modified_at: Mon 18 Apr 2022 10:52:16 AM IDT
+date: Sun 22 Mar 2022 10:53:29 AM IDT
+title:
+  he: "תורת המודלים של שדות דיפרנציאליים"
+  en: "Model theory of differential fields"
+type: graduate
 year: 2022
 term: spring
 lang: he
-noteslang: en
-notes: notes.pdf
-venue: בן-גוריון
+notes:
+  en: notes.pdf
+venue: bgu
 ---
 
 ## תקציר

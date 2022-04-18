@@ -268,3 +268,5 @@ it-IT:
 
 # Another locale
 # --------------
+he:
+  date_label: "פורסם:"

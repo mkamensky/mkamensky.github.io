@@ -1,2 +1,2 @@
-{% assign lang = post.lang | default: page.lang | default: 'en' %}
+{% assign lang = post.lang | default: page.lang | default: site.locale | default: 'en' %}
 {% assign t = site.data.i18n[lang] %}

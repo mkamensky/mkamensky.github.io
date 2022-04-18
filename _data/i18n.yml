@@ -1,4 +1,5 @@
 en:
+  notes: notes
   term:
     fall: fall
     spring: spring
@@ -6,6 +7,7 @@ en:
     graduate: graduate course
 
 he:
+  notes: רשימות
   term:
     fall: סתיו
     spring: אביב
