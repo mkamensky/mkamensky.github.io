@@ -13,7 +13,7 @@
       <div class="archive__item-teaser">
         <img src=
              {% if teaser contains "://" %}
-                                      "{{ teaser }}"
+                                          "{{ teaser }}"
            {% else %}
              "{{ teaser | prepend: "/images/" | prepend: base_path }}"
            {% endif %}
@@ -22,7 +22,7 @@
     {% endif %}
 
     {% if post.title.first %}
-    <div class="flex place-content-between" dir="ltr">
+      <div class="flex place-content-between" dir="ltr">
         {% for loc in site.data.i18n %}
           {% assign ll=loc[0] %}
           {% if post.id %}
@@ -50,30 +50,39 @@
                 <span class="sr-only">{{ notes }}</span>
               </a>
             {% endif %}
+            {% if post.venue == 'bgu' %}
+              {% if post.term == 'fall' %}
+                {% assign nyear = post.year | plus: 1 %}
+                {% assign termb = 'fall' | append: nyear %}
+              {% else %}
+                {% assign termb = 'spring' | append: post.year %}
+              {% endif %}
+              <a href="https://www.math.bgu.ac.il/{{ll}}/teaching/{{termb}}/courses/{{post.url | split: '/' | last }}"><img src="/images/bgu_logo.png" alt="bgu web page" class="icon" /></a>
+            {% endif %}
           </h2>
         {% endfor %}
-    </div>
-  {% else %}
-          {% if post.id %}
-            {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+      </div>
+    {% else %}
+      {% if post.id %}
+        {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 
-          {% else %}
-            {% assign title = post.title %}
-          {% endif %}
+      {% else %}
+        {% assign title = post.title %}
+      {% endif %}
 
-          <h2 class="archive__item-title" itemprop="headline" dir="auto">
-            {% if post.link %}
-              <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-            {% else %}
-              <a href="{{ post.url }}" rel="permalink">{{ title }}</a>
-            {% endif %}
-            {% if post.arxiv_url %}
-              <a  href="{{ post.arxiv_url }}">
-                <b class="text-black ai ai-lg ai-arxiv"></b>
-              </a>
-            {% endif %}
-          </h2>
+      <h2 class="archive__item-title" itemprop="headline" dir="auto">
+        {% if post.link %}
+          <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        {% else %}
+          <a href="{{ post.url }}" rel="permalink">{{ title }}</a>
         {% endif %}
+        {% if post.arxiv_url %}
+          <a  href="{{ post.arxiv_url }}">
+            <b class="text-black ai ai-lg ai-arxiv"></b>
+          </a>
+        {% endif %}
+      </h2>
+    {% endif %}
 
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
@@ -83,10 +92,13 @@
       <div class="flex place-content-between" dir="ltr">
         {% for loc in site.data.i18n %}
           {% assign ll=loc[0] %}
+          {% unless post.title[ll] %}
+            {% continue %}
+          {% endunless %}
           <p class="{{ ll }}" dir="auto">
           {{ loc[1].course[post.type] | capitalize }},
           <i>{{ site.data.venue[post.venue][ll] }}</i>,
-          {{ loc[1].term[post.term] }} {{ post.year }}
+          {{ loc[1].term[post.term] | capitalize }} {{ post.year }}
           </p>
         {% endfor %}
       </div>

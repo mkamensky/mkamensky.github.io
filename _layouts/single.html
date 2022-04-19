@@ -33,29 +33,38 @@ layout: default
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
-        {% if page.last_modified_at %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[loc].date_label | default: "Published:" }}</strong> <time datetime="{{ page.last_modified_at | date: "%Y-%m-%d" }}">{{ page.last_modified_at | date: "%Y-%m-%d" }}</time></p>
-        {% endif %}
-        
-        {% if page.collection == 'teaching' %}
-              <p>
-      {{ t.course[page.type] }}, <i>{{ site.data.venue[page.venue][loc] }}</i>,
-      {{ t.term[page.term] }} {{ page.year }}
-      </p>
+          {% if page.last_modified_at %}
+            <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[loc].date_label | default: "Published:" }}</strong> <time datetime="{{ page.last_modified_at | date: "%Y-%m-%d" }}">{{ page.last_modified_at | date: "%Y-%m-%d" }}</time></p>
+          {% endif %}
 
-        {% elsif page.venue and page.date %}
-          <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif page.date %}
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[loc].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-        {% endif %}
-        
-             
-        {% if page.citation and page.paperurl %}
-          <p>Recommended citation: {{ page.citation }} <a href="{{ page.paperurl }}"><u>{{ page.paperurl }}</u></a></p>
-        {% elsif page.citation %}
-          <p>Recommended citation: {{ page.citation }} </p>
-        {% endif %}
-    
+          {% if page.collection == 'teaching' %}
+            <p>
+            {{ t.course[page.type] }}, <i>{{ site.data.venue[page.venue][loc] }}</i>,
+            {{ t.term[page.term] }} {{ page.year }}
+            {% if page.venue == 'bgu' %}
+              {% if page.term == 'fall' %}
+                {% assign nyear = page.year | plus: 1 %}
+                {% assign termb = 'fall' | append: nyear %}
+              {% else %}
+                {% assign termb = 'spring' | append: page.year %}
+              {% endif %}
+              <a href="https://www.math.bgu.ac.il/{{page.lang}}/teaching/{{termb}}/courses/{{page.url | split: '/' | last }}"><img src="/images/bgu_logo.png" alt="bgu web page" class="icon" /></a>
+            {% endif %}
+            </p>
+
+          {% elsif page.venue and page.date %}
+            <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+          {% elsif page.date %}
+            <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[loc].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+          {% endif %}
+
+
+          {% if page.citation and page.paperurl %}
+            <p>Recommended citation: {{ page.citation }} <a href="{{ page.paperurl }}"><u>{{ page.paperurl }}</u></a></p>
+          {% elsif page.citation %}
+            <p>Recommended citation: {{ page.citation }} </p>
+          {% endif %}
+
         </header>
       {% endunless %}
 
