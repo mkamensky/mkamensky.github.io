@@ -1,7 +1,7 @@
 ---
 title:
-  he: "אלגברה קומוטטטיבית"
-  en: "Commutative algebra"
+  he: "מבוא לאלגברה קומוטטטיבית"
+  en: "ִIntroduction to Commutative algebra"
 type: undergrad
 year: 2020
 term: spring
