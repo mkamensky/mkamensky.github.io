@@ -1,5 +1,5 @@
 ---
-last_modified_at: 2022-04-27T20:03:41
+last_modified_at: 2022-04-28T03:53:35
 notes_modified: 2022-04-27
 date: Sun 22 Mar 2022 10:53:29 AM IDT
 title:
@@ -30,7 +30,7 @@ venue: bgu
 ## רשימות
 
 - [רשימות שלי](notes.pdf) (אנגלית, מתעדכן מדי פעם, עדכון אחרון:
-{{ page.notes_modified | date: "%B, %m %Y" }} )
+{{ page.notes_modified | date: "%Y-%m-%d" }} )
 
 - סיכומים של סטודנטים (עברית)
    - [שבוע 1](notes/lect1.pdf) (אור)
