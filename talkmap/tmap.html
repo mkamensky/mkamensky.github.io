@@ -35,7 +35,7 @@
         var a = addressPoints[i];
         const [slug, title, tdate, loc] = a[0].split(';;');
         var marker = L.marker(new L.LatLng(a[1], a[2]), { title: loc });
-                    marker.bindPopup(`<a href="/talks/${slug}">${title}</a>, <span>${tdate}</span>`)
+        marker.bindPopup(`<a href="/talks/${slug}">${title}</a>, <span>${tdate}</span>`)
      markers.addLayer(marker);
      }
      map.addLayer(markers);

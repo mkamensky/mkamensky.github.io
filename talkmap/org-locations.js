@@ -65,7 +65,7 @@ var addressPoints = [
     -87.6244212
   ],
   [
-    "The-Tannakian-formalism-over-fields-with-operators-fields16;;The Tannakian formalism over fields with operators;;2009-01-01;;Toronto, Canada",
+    "The-Tannakian-formalism-over-fields-with-operators-fields16;;The Tannakian formalism over fields with operators;;;;Toronto, Canada",
     43.6534817,
     -79.3839347
   ],
@@ -155,7 +155,7 @@ var addressPoints = [
     4.6667145
   ],
   [
-    "Fields-with-free-operators-in-positive-characteristic-manchester18;;Fields with free operators in positive characteristic;;2007-01-01;;Manchester, UK",
+    "Fields-with-free-operators-in-positive-characteristic-manchester18;;Fields with free operators in positive characteristic;;;;Manchester, UK",
     53.4794892,
     -2.2451148
   ],

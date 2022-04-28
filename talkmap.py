@@ -28,23 +28,19 @@ title = ""
 for file in g:
     with open(file, 'r') as f:
         lines = f.read()
-        if lines.find('location: "') > 1:
-            loc_start = lines.find('location: "') + 11
+        def get_field(field):
+            n = lines.find(field + ': "')
+            if n < 2:
+                return ''
+            loc_start = n + len(field) + 3
             lines_trim = lines[loc_start:]
             loc_end = lines_trim.find('"')
-            location = lines_trim[:loc_end]
+            return lines_trim[:loc_end]
 
-        if lines.find('title: "') > 1:
-            loc_start = lines.find('title: "') + 8
-            lines_trim = lines[loc_start:]
-            loc_end = lines_trim.find('"')
-            title = lines_trim[:loc_end]
 
-        if lines.find('date: "') > 1:
-            loc_start = lines.find('date: "') + 7
-            lines_trim = lines[loc_start:]
-            loc_end = lines_trim.find('"')
-            date = lines_trim[:loc_end]
+        location = get_field('location')
+        title = get_field('title')
+        date = get_field('date')
 
         slug = file.rsplit('.', 1)[0]
 
