@@ -1,5 +1,5 @@
 ---
-last_modified_at: 2022-04-28T03:53:35
+last_modified_at: 2022-04-28T09:05:03
 notes_modified: 2022-04-27
 date: Sun 22 Mar 2022 10:53:29 AM IDT
 title:
@@ -38,5 +38,6 @@ venue: bgu
    - [הרצאה 4](notes/lect4.pdf) (אור)
    - [הרצאה 5](notes/lect5.pdf) (גילי)
    - [שבוע 4](notes/week4.pdf) (אור)
+   - [שבוע 5](notes/week5.pdf) (אור)
 
 
