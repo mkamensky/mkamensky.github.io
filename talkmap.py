@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 
 # # Leaflet cluster map of talk locations
 #
@@ -18,7 +18,7 @@ from geopy import Nominatim
 g = glob.glob("*.md")
 
 
-geocoder = Nominatim()
+geocoder = Nominatim(user_agent = 'talkmap-moshe')
 location_dict = {}
 location = ""
 permalink = ""
@@ -33,10 +33,25 @@ for file in g:
             lines_trim = lines[loc_start:]
             loc_end = lines_trim.find('"')
             location = lines_trim[:loc_end]
-                            
-           
-        location_dict[location] = geocoder.geocode(location)
-        print(location, "\n", location_dict[location])
+
+        if lines.find('title: "') > 1:
+            loc_start = lines.find('title: "') + 8
+            lines_trim = lines[loc_start:]
+            loc_end = lines_trim.find('"')
+            title = lines_trim[:loc_end]
+
+        if lines.find('date: "') > 1:
+            loc_start = lines.find('date: "') + 7
+            lines_trim = lines[loc_start:]
+            loc_end = lines_trim.find('"')
+            date = lines_trim[:loc_end]
+
+        slug = file.rsplit('.', 1)[0]
+
+        key = ';;'.join([slug, title, date, location])
+
+        location_dict[key] = geocoder.geocode(location)
+        print(key, "\n", location_dict[key])
 
 
 m = getorg.orgmap.create_map_obj()
