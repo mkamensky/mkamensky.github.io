@@ -1,6 +1,6 @@
 ---
 last_modified_at: 2022-04-28T09:05:03
-notes_modified: 2022-04-27
+notes_modified: 2022-05-12
 date: Sun 22 Mar 2022 10:53:29 AM IDT
 title:
   he: "תורת המודלים של שדות דיפרנציאליים"
