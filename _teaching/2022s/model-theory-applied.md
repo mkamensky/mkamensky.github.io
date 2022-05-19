@@ -1,6 +1,6 @@
 ---
-last_modified_at: 2022-04-28T09:05:03
-notes_modified: 2022-05-12
+last_modified_at: 2022-05-19T06:45:54
+notes_modified: 2022-05-19
 date: Sun 22 Mar 2022 10:53:29 AM IDT
 title:
   he: "תורת המודלים של שדות דיפרנציאליים"
@@ -39,5 +39,7 @@ venue: bgu
    - [הרצאה 5](notes/lect5.pdf) (גילי)
    - [שבוע 4](notes/week4.pdf) (אור)
    - [שבוע 5](notes/week5.pdf) (אור)
+   - [שבוע 6](notes/week6.pdf) (אור)
+   - [שבוע 7](notes/week7.pdf) (אור)
 
 
