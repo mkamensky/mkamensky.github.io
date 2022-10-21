@@ -13,7 +13,7 @@ GEM
       rexml
     csl-styles (2.0.1)
       csl (~> 2.0)
-    latex-decode (0.3.2)
+    latex-decode (0.4.0)
     mustache (1.1.1)
     namae (1.1.1)
     rexml (3.2.5)
@@ -29,4 +29,4 @@ DEPENDENCIES
   mustache
 
 BUNDLED WITH
-   2.2.22
+   2.3.7
