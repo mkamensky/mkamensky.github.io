@@ -6,15 +6,15 @@ excerpt: ""
 date: 2021-07-01
 venue: "J. Inst. Math. Jussieu"
 link: "https://doi.org/10.1017/S147474802100030X"
-citation: "Kamensky\\bgurolePI, M., Starchenko\\bgurolePI, S., &amp; Ye\\bgurolePI, J. (2021). Peterzil-Steinhorn subgroups and μ-stabilizers in ACF. <i>J. Inst. Math. Jussieu</i>, 1–20. https://doi.org/10.1017/S147474802100030X"
+citation: "Kamensky, M., Starchenko, S., &amp; Ye, J. (2021). Peterzil-Steinhorn subgroups and μ-stabilizers in ACF. <i>J. Inst. Math. Jussieu</i>, 1–20. https://doi.org/10.1017/S147474802100030X"
 arxiv_url: "https://arxiv.org/abs/1910.01496"
 doi_url: "https://doi.org/10.1017/S147474802100030X"
 authors:
-  - family: Kamensky\bgurolePI
+  - family: Kamensky
     given: Moshe
-  - family: Starchenko\bgurolePI
+  - family: Starchenko
     given: Sergei
-  - family: Ye\bgurolePI
+  - family: Ye
     given: Jinhe
 ---
 

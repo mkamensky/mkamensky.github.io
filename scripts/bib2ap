@@ -11,7 +11,7 @@ require 'json'
 @locale = 'en-GB'
 @style = 'apa'
 @verbose = true
-@rcfile = 'bibtex/bib2aprc'
+@rcfile = 'scripts/bib2aprc'
 
 begin
 binding.eval(File.read(@rcfile), @rcfile)
