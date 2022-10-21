@@ -1,7 +1,7 @@
 ---
 title: "Imaginaries in separably closed valued fields"
 collection: publications
-permalink: "/publication/Imaginaries-in-separably-closed-valued-fields-MR3816386"
+permalink: "/publication/Imaginaries-in-separably-closed-valued-fields"
 excerpt: "We show that separably closed valued fields of finite imperfection degree (either with lambda-functions or commuting Hasse derivations) eliminate imaginaries in the geometric language. We then use this classification of interpretable sets to study stably dominated types in those structures. We show that separably closed valued fields of finite imperfection degree are metastable and that the space of stably dominated types is strict pro-definable."
 date: 2018-06-01
 venue: "Proc. Lond. Math. Soc. (3)"

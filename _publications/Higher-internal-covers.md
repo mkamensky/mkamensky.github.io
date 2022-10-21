@@ -1,7 +1,7 @@
 ---
 title: "Higher internal covers"
 collection: publications
-permalink: "/publication/Higher-internal-covers-higher"
+permalink: "/publication/Higher-internal-covers"
 excerpt: ""
 date: 2022-01-01
 venue: ""

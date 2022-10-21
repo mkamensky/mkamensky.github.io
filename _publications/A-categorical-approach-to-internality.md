@@ -1,7 +1,7 @@
 ---
 title: "A categorical approach to internality"
 collection: publications
-permalink: "/publication/A-categorical-approach-to-internality-MR2867967"
+permalink: "/publication/A-categorical-approach-to-internality"
 excerpt: "Model theoretic internality provides conditions under which the group of automorphisms of a model over a reduct is itself a definable group. In this paper we formulate a categorical analogue of the condition of internality, and prove an analogous result on the categorical level. The model theoretic statement is recovered by considering the category of definable sets."
 date: 2011-01-01
 venue: "Models, logics, and higher-dimensional categories"

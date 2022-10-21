@@ -1,7 +1,7 @@
 ---
 title: "Peterzil-Steinhorn subgroups and μ-stabilizers in ACF"
 collection: publications
-permalink: "/publication/Peterzil-Steinhorn-subgroups-and--stabilizers-in-ACF-psgroups"
+permalink: "/publication/Peterzil-Steinhorn-subgroups-and--stabilizers-in-ACF"
 excerpt: ""
 date: 2021-07-01
 venue: "J. Inst. Math. Jussieu"

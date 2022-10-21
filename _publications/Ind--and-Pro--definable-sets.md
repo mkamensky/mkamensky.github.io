@@ -1,7 +1,7 @@
 ---
 title: "Ind- and Pro- definable sets"
 collection: publications
-permalink: "/publication/Ind--and-Pro--definable-sets-MR2335085"
+permalink: "/publication/Ind--and-Pro--definable-sets"
 excerpt: "We describe the ind- and pro- categories of the category of definable sets, in some first order theory, in terms of points in a sufficiently saturated model."
 date: 2007-01-01
 venue: "Ann. Pure Appl. Logic"

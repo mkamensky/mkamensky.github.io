@@ -68,7 +68,7 @@ end.parse!
 @bibfile = ARGV.shift || "bibtex/#{@format}.bib"
 
 def to_fname(item)
-  (item.title.to_s + '-' + item.key).tr(' ', '-').tr_s('^A-Za-z0-9\-_', '')
+  (item.title.to_s).tr(' ', '-').tr_s('^A-Za-z0-9\-_', '')
 end
 
 def month_canon(month)
