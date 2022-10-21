@@ -13,7 +13,7 @@ languages: ["en", "he"]
 title                    : "Moshe Kamensky"
 title_separator          : "-"
 name                     : &name "Moshe Kamensky"
-description              : &description "Lecturer at Ben-Gurion University"
+description              : &description "Senior Lecturer at Ben-Gurion University"
 url                      : https://mkamensky.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "mkamensky/mkamensky.github.io"
@@ -87,7 +87,7 @@ author:
   given            : "Moshe"
   family           : "Kamensky"
   avatar           : "profile.png"
-  bio              : "Lecturer in Mathematics at BGU"
+  bio              : "Senior Lecturer in Mathematics at BGU"
   location         :
   employer         : "Ben-Gurion University, Israel"
   googlescholar    : "https://scholar.google.com/citations?user=XQf8uW4AAAAJ"
