@@ -8,4 +8,5 @@ title:
 
 - [מטלה 1](exercise01.pdf)
 - [מטלה 2](exercise02.pdf)
+- [מטלה 3](exercise03.pdf)
 

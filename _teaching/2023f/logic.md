@@ -1,5 +1,5 @@
 ---
-notes_modified: 2022-10-22
+notes_modified: 2022-11-09
 title:
   he: "לוגיקה"
   en: "Logic"
@@ -28,4 +28,5 @@ venue: bgu
 
 - [מטלה 1](hw/exercise01.pdf)
 - [מטלה 2](hw/exercise02.pdf)
+- [מטלה 3](hw/exercise03.pdf)
 
