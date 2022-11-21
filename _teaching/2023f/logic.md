@@ -1,5 +1,5 @@
 ---
-notes_modified: 2022-11-09
+notes_modified: 2022-11-21
 title:
   he: "לוגיקה"
   en: "Logic"
