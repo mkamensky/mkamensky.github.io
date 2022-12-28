@@ -15,4 +15,5 @@ title:
 - [מטלה 7](exercise07.pdf)
 - [מטלה 8](exercise08.pdf)
 - [מטלה 9](exercise09.pdf)
+- [מטלה 10](exercise10.pdf)
 

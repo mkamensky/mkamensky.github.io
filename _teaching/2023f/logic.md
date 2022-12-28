@@ -35,4 +35,5 @@ venue: bgu
 - [מטלה 7](hw/exercise07.pdf)
 - [מטלה 8](hw/exercise08.pdf)
 - [מטלה 9](hw/exercise09.pdf)
+- [מטלה 10](hw/exercise10.pdf)
 
