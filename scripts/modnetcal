@@ -1,0 +1,164 @@
+#!/usr/bin/env perl
+
+# $Id$
+
+use 5.10.0;
+use utf8;
+use warnings;
+use integer;
+use autodie qw(:all);
+
+BEGIN {
+    our ($VERSION) = '$Revision$' =~ m{\$Revision: \s+ (\S+)}x; ## no critic
+}
+
+use Getopt::Long qw(:config gnu_getopt auto_help auto_version);
+our %Opts = ();
+GetOptions(\%Opts, qw(ical! diff! csv!));
+
+# step 1: fetch data from web page
+use LWP::UserAgent;
+use HTML::TreeBuilder;
+
+$url = 'http://modnet.imj-prg.fr/Meetings%20and%20events/';
+
+my $m=new LWP::UserAgent;
+my $r=$m->get($url);
+die 'Failed to fetch: ' . $r->status_line unless $r->is_success;
+my $t=HTML::TreeBuilder->new_from_content($r->decoded_content);
+my $e = $t->find_by_attribute("class" => "contenuDiv");
+for my $i ( $e->find("li") ) {
+    my $l = $i->as_text;
+    my $n;
+    my $h;
+    my $a;
+    if ($a = $i->find("a") and $n = $a->as_text) {
+        $h = $a->attr("href");
+        chomp($h);
+        my $j = index($l, $n);
+        if ( $j >= 0 ) {
+            substr($l, 0, $j + length($n), '');
+        } else {
+            warn "'$n' is not a substring of '$l'";
+        }
+        $n =~ s/^ *//;
+        $l =~ s/^,? *//;
+    } else {
+        $n = $1 if $l =~ s/^([^,]*), *//;
+        $n =~ s/^\[MODNET\]//
+    }
+    my $p = $1 if $l =~ s/^(.*), *([0-9])/$2/;
+    unless ($p) {
+        $p = $1 if $l =~ s/^(.*?) ([0-9])/$2/;
+    }
+    $p =~ s/^\[MODNET\] *,? *//;
+    $l =~ s/\..*$//;
+    push @m, {name => $n, place => $p, url => $h, time => $l}
+}
+
+# step 2: update calendar
+use DateTime::Format::Natural;
+
+my $parse = new DateTime::Format::Natural;
+$" = ',';
+binmode STDIN, ':utf8';
+binmode STDOUT, ":utf8";
+
+if ($Opts{'ical'}) {
+    use Data::ICal::DateTime;
+    use Data::ICal::Entry::Event;
+    our $ical = new Data::ICal calname => 'Meetings in model theory',
+        rfc_strict => 1, auto_uid => 1;
+    $ical->add_properties(
+        prodid => 'modnetcal',
+    );
+    our $old = new Data::ICal data => join('', <STDIN>);
+    our @old = $old->events if $old;
+}
+
+if ($Opts{'csv'}) {
+    use Text::CSV;
+    our $csv = new Text::CSV;
+}
+
+sub date_str {
+    my $dt = shift;
+    sprintf("%04d%02d%02d", $dt->year, $dt->month, $dt->day)
+}
+
+our %MN = (
+    janvier => 'January', 
+    février => 'February', 
+    mars => 'March', 
+    avril => 'April', 
+    mai => 'May', 
+    juin => 'June', 
+    juillet => 'July', 
+    aout => 'August', 
+    septembre => 'September', 
+    octobre => 'October', 
+    novembre => 'November', 
+    décembre => 'December', 
+);
+
+
+our $MN = join('|', keys %MN);
+$MN = qr/$MN/;
+
+for my $m ( @m ) {
+    my $ti;
+    if ( $m->{'time'} =~ /(.*?) *- *(.*) (20[0-9][0-9])/ ) {
+        my $fr = $1;
+        my $to = $2;
+        my $y = $3;
+        if ( $fr =~ /^[0-9]*$/ ) {
+            if ( $to =~ /^[0-9]* (.*)/ ) {
+                $fr .= " $1";
+            } else {
+                warn "Can't parse to: $to";
+            }
+        }
+        $fr = "$fr $y" unless $fr =~ /20[0-9][0-9]/;
+        $ti = "$fr to $to $y";
+    } else {
+        $ti = "$m->{'time'} to $m->{'time'}";
+    }
+    $ti =~ s/\b($MN)\b/$MN{$1}/ge;
+    my @dt = $parse->parse_datetime_duration($ti);
+    #$dt[1] += new DateTime::Duration(days => 1) if $#dt;
+    $_->truncate(to => 'day') foreach @dt;
+    if ($Opts{'ical'}) {
+        ($vev) = grep {
+            ($_->summary eq $m->{'name'}) and ($_->start eq date_str($dt[0]))
+        } @old;
+        $dtend = $dt[1]->clone;
+        $dtend->add(days => 1);
+        $vev //= new Data::ICal::Entry::Event;
+        $vev->add_properties(
+            summary => $m->{'name'},
+            location => $m->{'place'},
+            url => $m->{'url'},
+            status => 'CONFIRMED',
+            dtstart => date_str($dt[0]),
+            dtend => date_str($dtend),
+        );
+        #$vev->start($dt[0]);
+        #$vev->end($dt[1]);
+        #$vev->all_day(1);
+        $vev->property('dtstart')->[0]->parameters->{'VALUE'} = 'DATE';
+        $vev->property('dtend')->[0]->parameters->{'VALUE'} = 'DATE';
+        $vev->add_properties(
+            dtstamp => DateTime::Format::ICal->format_datetime(DateTime->now),
+        ) unless $vev->property('dtstamp');
+        $ical->add_entry($vev);
+    }
+    if ($Opts{'csv'}) {
+        $csv->print(STDOUT, [@$m{qw(name place url)}, @dt]);
+        say "";
+    }
+}
+
+if ($Opts{'ical'}) {
+    print $ical->as_string;
+}
+
