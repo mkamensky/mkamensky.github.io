@@ -618,7 +618,8 @@ DTSTAMP:20230630T091311Z
 DTSTART;VALUE=DATE:20210623
 LOCATION: Erlagol (Russia)
 STATUS:CONFIRMED
-SUMMARY:Problems Allied to Model Theory and Universal Algebra. On the occasion of Bruno Poizat 75th birthday.
+SUMMARY:Problems Allied to Model Theory and Universal Algebra. On the 
+ occasion of Bruno Poizat 75th birthday.
 UID:1688116393-658850-59@gaspode
 URL:http://erlagol.ru/?lang=en
 END:VEVENT
@@ -802,7 +803,8 @@ DTSTAMP:20230630T091311Z
 DTSTART;VALUE=DATE:20200727
 LOCATION: Passau (Germany)
 STATUS:CONFIRMED
-SUMMARY:Practical and Structural Model Theory. On the occasion of the 60th ± birthdays of Kobi Peterzil and Sergei Starchenko.
+SUMMARY:Practical and Structural Model Theory. On the occasion of 
+ the 60th ± birthdays of Kobi Peterzil and Sergei Starchenko.
 UID:1688116393-658850-77@gaspode
 URL:https://www.fim.uni-passau.de/en/professorship-mathematics/conference-p
  ractical-and-structural-model-theory/
@@ -860,6 +862,8 @@ UID:1688116393-658850-82@gaspode
 URL:http://gtm.imj-prg.fr/archives1920.html#GTM-19062020
 END:VEVENT
 BEGIN:VEVENT
+DTEND;VALUE=DATE:20200613
+DTSTART;VALUE=DATE:20200608
 DTSTAMP:20230630T091311Z
 LOCATION:MSRI\, Berkeley (USA)
 STATUS:CANCELLED
@@ -2342,7 +2346,9 @@ DTSTAMP:20230630T091312Z
 DTSTART;VALUE=DATE:20150622
 LOCATION:Erlagol (Russia)
 STATUS:CONFIRMED
-SUMMARY: Erlagol-2015: Problems Allied to Universal Algebra and Model Theory. In occasion of 70th birthday of Professor Evgenii Palyutin and of Professor Evgenii Timochenko.
+SUMMARY: Erlagol-2015: Problems Allied to Universal Algebra and Model 
+ Theory. In occasion of 70th birthday of Professor Evgenii Palyutin and 
+  of Professor Evgenii Timochenko.
 UID:1688116393-658850-229@gaspode
 URL:http://uamt.conf.nstu.ru/indexeng.htm
 END:VEVENT
