@@ -70,8 +70,8 @@ END:VEVENT
 BEGIN:VEVENT
 DTEND;VALUE=DATE:20230826
 DTSTAMP:20230630T091311Z
-DTSTART;VALUE=DATE:20230630
-LOCATION:Warsaw (Poland). Workshop (14 -
+DTSTART;VALUE=DATE:20230821
+LOCATION:Warsaw (Poland)
 STATUS:CONFIRMED
 SUMMARY:Descriptive set theory and dynamics
 UID:1688116393-658850-6@gaspode
@@ -541,9 +541,9 @@ UID:1688116393-658850-51@gaspode
 URL:http://www.math.ens.fr/~zchatzid/FMR/
 END:VEVENT
 BEGIN:VEVENT
-DTEND;VALUE=DATE:20230701
+DTEND;VALUE=DATE:20210911
 DTSTAMP:20230630T091311Z
-DTSTART;VALUE=DATE:20230630
+DTSTART;VALUE=DATE:20210910
 LOCATION:on the occasion of Bektur Baizhanov's
 STATUS:CONFIRMED
 SUMMARY:Mathematical logic and related problems of mathematics
@@ -616,9 +616,9 @@ BEGIN:VEVENT
 DTEND;VALUE=DATE:20210630
 DTSTAMP:20230630T091311Z
 DTSTART;VALUE=DATE:20210623
-LOCATION:on the occasion of Bruno Poizat 75th birthday\, Erlagol (Russia)
+LOCATION: Erlagol (Russia)
 STATUS:CONFIRMED
-SUMMARY:Problems Allied to Model Theory and Universal Algebra
+SUMMARY:Problems Allied to Model Theory and Universal Algebra. On the occasion of Bruno Poizat 75th birthday.
 UID:1688116393-658850-59@gaspode
 URL:http://erlagol.ru/?lang=en
 END:VEVENT
@@ -800,10 +800,9 @@ BEGIN:VEVENT
 DTEND;VALUE=DATE:20200801
 DTSTAMP:20230630T091311Z
 DTSTART;VALUE=DATE:20200727
-LOCATION:- on the occasion of the 60th ± birthdays of Kobi Peterzil and Ser
- gei Starchenko\, Passau (Germany)
+LOCATION: Passau (Germany)
 STATUS:CONFIRMED
-SUMMARY:Practical and Structural Model Theory
+SUMMARY:Practical and Structural Model Theory. On the occasion of the 60th ± birthdays of Kobi Peterzil and Sergei Starchenko.
 UID:1688116393-658850-77@gaspode
 URL:https://www.fim.uni-passau.de/en/professorship-mathematics/conference-p
  ractical-and-structural-model-theory/
@@ -861,11 +860,9 @@ UID:1688116393-658850-82@gaspode
 URL:http://gtm.imj-prg.fr/archives1920.html#GTM-19062020
 END:VEVENT
 BEGIN:VEVENT
-DTEND;VALUE=DATE:20230701
 DTSTAMP:20230630T091311Z
-DTSTART;VALUE=DATE:20230630
 LOCATION:MSRI\, Berkeley (USA)
-STATUS:CONFIRMED
+STATUS:CANCELLED
 SUMMARY:Algebraic Theory of Differential and Difference Equations\, Model T
  heory and their Applications
 UID:1688116393-658850-83@gaspode
@@ -2343,11 +2340,9 @@ BEGIN:VEVENT
 DTEND;VALUE=DATE:20150629
 DTSTAMP:20230630T091312Z
 DTSTART;VALUE=DATE:20150622
-LOCATION:Problems Allied to Universal Algebra and Model Theory. In occasion
-  of 70th birthday of Professor Evgenii Palyutin and of Professor Evgenii T
- imochenko. Erlagol (Russia)
+LOCATION:Erlagol (Russia)
 STATUS:CONFIRMED
-SUMMARY:Erlagol-2015
+SUMMARY: Erlagol-2015: Problems Allied to Universal Algebra and Model Theory. In occasion of 70th birthday of Professor Evgenii Palyutin and of Professor Evgenii Timochenko.
 UID:1688116393-658850-229@gaspode
 URL:http://uamt.conf.nstu.ru/indexeng.htm
 END:VEVENT
