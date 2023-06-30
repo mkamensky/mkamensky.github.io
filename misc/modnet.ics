@@ -27,9 +27,10 @@ BEGIN:VEVENT
 DTEND;VALUE=DATE:20230924
 DTSTAMP:20230630T091311Z
 DTSTART;VALUE=DATE:20230919
-LOCATION:(as part of the IDUB Thematic Research Programme of the University
-  of Warsaw STRUCTURES: set theory\, model theory\, logic and computer scie
- nce)\, Wroc&lstrok\;aw (Poland)
+LOCATION:\, Wroc&lstrok\;aw (Poland)
+DESCRIPTION:As part of the IDUB Thematic Research Programme of the
+ University of Warsaw STRUCTURES: set theory\, model theory\, logic 
+  and computer science
 STATUS:CONFIRMED
 SUMMARY:Model Theory Conference
 UID:1688116393-658850-2@gaspode
