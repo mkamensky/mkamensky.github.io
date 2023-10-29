@@ -1,5 +1,7 @@
-source "https://rubygems.org"
-ruby '~>3.0'
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+ruby '~>3.2'
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
@@ -10,22 +12,20 @@ ruby '~>3.0'
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
-
 # If you want to use Jekyll native, uncomment the line below.
 # To upgrade, run `bundle update`.
 
-gem "jekyll"
-gem "webrick"
-gem 'pry'
+gem 'jekyll'
+gem 'webrick'
 
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+gem 'wdm', '~> 0.1.0' if Gem.win_platform?
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  # gem "jekyll-archives"
-  gem "jekyll-feed"
+  # gem 'jekyll-archives'
+  gem 'jekyll-feed'
   gem 'jekyll-sitemap'
   gem 'hawkins'
-  gem "github-pages"
+  gem 'github-pages'
 end
 
