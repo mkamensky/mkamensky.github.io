@@ -22,4 +22,6 @@ venue: bgu
 8. אידיאלים ראשונים ולוקליזציה. פרוק פרימרי.
 9. חוגי הערכה בדידה.
 
+[רשימות](notes.pdf) (מתעדכן מדי פעם{% if page.last_modified_at %}, עדכון אחרון: 
+{{ page.notes_modified | date: "%Y-%m-%d" }} {% endif %})
 
