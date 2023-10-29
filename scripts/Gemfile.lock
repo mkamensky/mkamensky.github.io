@@ -16,7 +16,7 @@ GEM
     latex-decode (0.4.0)
     mustache (1.1.1)
     namae (1.1.1)
-    rexml (3.2.5)
+    rexml (3.2.6)
 
 PLATFORMS
   ruby

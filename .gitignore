@@ -2,4 +2,5 @@ _site/
 web_modules
 talkmap/map.html
 .tags
-
+node_modules
+package-lock.json
