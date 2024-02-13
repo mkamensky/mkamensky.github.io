@@ -136,10 +136,8 @@ exclude:
   - .asset-cache
   - .bundle
   - .jekyll-assets-cache
-  - .sass-cache
   - CHANGELOG
   - Capfile
-  - Gemfile
   - Gruntfile.js
   - LICENSE
   - README
@@ -150,10 +148,10 @@ exclude:
   - config
   - gulpfile.js
   - log
-  - node_modules
   - package.json
   - tmp
   - bibtex
+
 keep_files:
   - .git
   - .svn

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '~>3.2'
+ruby '~>3.3'
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
@@ -15,7 +15,7 @@ ruby '~>3.2'
 # If you want to use Jekyll native, uncomment the line below.
 # To upgrade, run `bundle update`.
 
-gem 'jekyll'
+gem 'jekyll', '>= 4.0'
 gem 'webrick'
 gem 'faraday-retry'
 
@@ -26,7 +26,9 @@ group :jekyll_plugins do
   # gem 'jekyll-archives'
   gem 'jekyll-feed'
   gem 'jekyll-sitemap'
-  gem 'hawkins'
-  gem 'github-pages'
+  gem 'jekyll-paginate'
+  gem 'jekyll-gist'
+  gem 'jekyll-redirect-from'
+  #gem 'github-pages'
 end
 
