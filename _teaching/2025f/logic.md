@@ -2,10 +2,10 @@
 title:
   he: "לוגיקה"
   en: "ִlogic"
-type: undergrad
+type: grad
 year: 2024
 term: fall
-catalog: '201.1.6061'
+catalog: '201.2.6061'
 lang: he
 notes:
   he: notes.pdf
