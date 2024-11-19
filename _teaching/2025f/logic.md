@@ -2,7 +2,7 @@
 title:
   he: "לוגיקה"
   en: "ִlogic"
-type: grad
+type: graduate
 year: 2024
 term: fall
 catalog: '201.2.6061'
