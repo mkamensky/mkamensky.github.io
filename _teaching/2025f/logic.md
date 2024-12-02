@@ -1,5 +1,5 @@
 ---
-notes_modified: 2024-11-18
+notes_modified: 2024-12-02
 title:
   he: "לוגיקה"
   en: "ִlogic"
@@ -24,11 +24,12 @@ venue: bgu
 
 ## מטלות
 
-להגשה עד רביעי בערב שבוע אחרי שניתנו:
+להגשה עד חמישי בערב שבוע אחרי שניתנו:
 
 - [מטלה 1](hw/exercise01.pdf), [פתרון חלקי](hw/solution01.pdf)
 - [מטלה 2](hw/exercise02.pdf)
 - [מטלה 3](hw/exercise03.pdf)
 - [מטלה 4](hw/exercise04.pdf)
+- [מטלה 5](hw/exercise05.pdf)
 
 
