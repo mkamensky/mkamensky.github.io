@@ -98,6 +98,9 @@ bib['@entry'].each do |item|
   @must = Mustache.new
   @must.template_file = @template
   verbose "Processing #{item[:key]}"
+  if item[:pubstate] || item[:keywords]&.include?('preprint') # preprint
+    item.delete(:journal)
+  end
   if item[:doi]
     item[:doi_url] = "https://doi.org/#{item.doi}"
     item[:url] ||= item[:doi_url]
