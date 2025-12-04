@@ -68,11 +68,14 @@ end.parse!
 @bibfile = ARGV.shift || "bibtex/#{@format}.bib"
 
 def to_fname(item)
-  (item.title.to_s).tr(' ', '-').tr_s('^A-Za-z0-9\-_', '')
+  require 'debug'
+  item.values_at(*%i[title eventdate organization]).compact.join('-').tr(' ', '_').tr_s('^A-Za-z0-9\-_', '')
+  #("#{item.title}-#{item.eventdate}-#{item.organization}").tr(' ', '-').tr_s('^A-Za-z0-9\-_', '')
 end
 
 def month_canon(month)
-  return '01' unless month
+  return unless month
+
   month = month.to_s
   return (month.to_i > 0 ? month : (
     Date::ABBR_MONTHNAMES.index(month[0..2].capitalize) || 1
@@ -116,18 +119,18 @@ bib['@entry'].each do |item|
   }
   if (item[:eventdate] && item[:eventdate] =~ /^[0-9]*$/)
     item[:year] = item[:eventdate]
-    item[:eventdate] = nil
+    if month = month_canon(item[:month])
+      item[:eventdate] = "#{item[:year]}-#{month}-01"
+    end
   end
 
-  if item[:year]
-    month = month_canon(item[:month])
-    @must['eventdate'] = @must['date'] = "#{item[:year]}-#{month}-01"
-  end
   cit = item.to_citeproc
   cit.each {|k,v| 
     @must["cit_#{k}"] = to_escaped(v)
     @must["bare_cit_#{k}"] = v.to_s
   }
+  #require 'debug'
+  #debugger
   cp.import [cit]
   citation = cp.render :bibliography, id: item.key
   @must["citation"] = to_escaped(citation[0])
@@ -139,7 +142,7 @@ bib['@entry'].each do |item|
   # todo: read src from _config.yml
   fname = "_#{@format}/#{@must['fname']}.md"
   verbose "  Writing to #{fname}"
-  File.open(fname, 'w') do |ff|
+  File.open(fname, 'wx') do |ff|
     ff.write(@must.render)
   end
 end
