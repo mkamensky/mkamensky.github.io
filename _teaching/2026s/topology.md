@@ -3,7 +3,7 @@ notes_modified: 2026-03-17
 title:
   he: "מבוא לטופולוגיה"
   en: "ִintroduction to topology"
-type: undergraduate
+type: undergrad
 year: 2026
 term: spring
 catalog: '201.1.0091'
