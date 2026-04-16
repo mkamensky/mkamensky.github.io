@@ -33,5 +33,7 @@ venue: bgu
 להגשה עד רביעי בערב שבוע אחרי שניתנו:
 
 - [מטלה 1](hw/exercise01.pdf)
+- [מטלה 2](hw/exercise02.pdf)
+- [מטלה 3](hw/exercise03.pdf)
 
 
